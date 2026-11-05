@@ -1,0 +1,17 @@
+MedFed Multi-Disease Research V3 – validation report
+
+Checks performed in the build environment:
+- Python syntax compilation: PASS
+- AST parse of app.py and new core modules: PASS
+- FedAvg weighted aggregation unit test: PASS
+- Non-IID partition coverage / non-empty client test: PASS
+- CSV preprocessing and split smoke test: PASS
+- One-round tabular FedAvg training and evaluation smoke test: PASS
+
+Checks not performed:
+- Streamlit UI launch: Streamlit is not installed in the build environment.
+- MedMNIST image download/training for PneumoniaMNIST, OrganAMNIST and BreastMNIST: medmnist is not installed and external dataset downloads were not run.
+- Flower distributed runtime: Flower is not installed; the generic Flower adapter is syntax-checked only.
+- Clinical validation: not performed and not claimed.
+
+To complete local validation, install requirements.txt on Python 3.11, launch the app, and run at least one experiment per image module and one experiment using each approved CSV dataset. Preserve exported configurations and repeat with multiple seeds before reporting research results.

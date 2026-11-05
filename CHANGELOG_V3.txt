@@ -1,0 +1,19 @@
+MedFed Group 28 – Multi-Disease Research V3
+
+Added:
+- Five research dashboard modules: Pneumonia, CT organ classification, breast ultrasound benign/malignant benchmark, Diabetes CSV, and Blood-test CSV.
+- Reusable image CNN and tabular MLP model factories.
+- Generic in-process FedAvg and FedProx training engine.
+- IID and Dirichlet non-IID client partitioning.
+- CSV ingestion with stratified train/validation/test splits; preprocessing is fitted on training data only.
+- Centralised and local-only baselines; class-wise metrics; JSON/CSV/model downloads.
+- Explicit task-scope, privacy and clinical-use limitations.
+- Original V2 pneumonia code retained for reference/backward compatibility.
+
+Important:
+- The dashboard's current federated simulator is in-process and single-machine. It is not a distributed Flower deployment.
+- Flower adapter/strategy examples from V2 are retained but have not been promoted as a complete production Flower app.
+- No formal differential privacy or secure aggregation is implemented.
+- Diabetes and blood-test tasks require user-supplied documented labelled CSV files.
+- BreastMNIST is an ultrasound benchmark; OrganAMNIST is CT organ classification; neither should be described as a general cancer/CT diagnostic system.
+- This is a research prototype, not a clinically validated tool.

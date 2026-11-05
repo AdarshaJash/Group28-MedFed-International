@@ -1,0 +1,15 @@
+MedFed V2 changes
+=================
+
+1. Added a stratified validation split from the selected training examples.
+2. Added inverse-frequency class weights to the training loss to reduce majority-class bias.
+3. Added decision-threshold selection using validation data only. The held-out test subset is not used to choose the threshold.
+4. Applied the selected threshold consistently to global-model evaluation and the uploaded-image demo.
+5. Added balanced accuracy, specificity and threshold reporting to the round history and baselines.
+6. Improved the selected-example allocation so class proportions are approximately preserved.
+7. Added guardrails for invalid FedAvg aggregation with zero total samples.
+8. Clarified the dashboard/README that threshold tuning is not clinical validation and does not guarantee a correct prediction.
+
+Validation status
+-----------------
+Python syntax and archive integrity checks are run before delivery. The full MedMNIST training flow has not been executed in this build environment because the MedMNIST package/dataset is unavailable here. The user should rerun the experiment locally and share the resulting metrics. No accuracy improvement is claimed before that run.
